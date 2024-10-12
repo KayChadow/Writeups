@@ -1,7 +1,7 @@
 
-# \<The challenge title\>
+# Picker II
 
-*\<Difficulty\>*
+*Medium*
 
 >### Description
 >Can you figure out how this program works to get the flag?
