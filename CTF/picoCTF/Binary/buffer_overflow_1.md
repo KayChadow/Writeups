@@ -16,7 +16,7 @@
 
 The program allows us to input any string. It will be stored in "buf" with a buffersize of 32. But the input uses "gets(buf)", this is unsafe since "gets()" does not check for memory sizes, and thus is not safe against buffer overflows. 
 
-We notice that the characters 45-48 we input are reflected into the return address gathered from the "<get_return_address>" method. I also notice that, if I don't do anything malicious, the return address is just the address given in the disassembled binary. So lets try to inject the address of "<win>" (0x080491f6) into the return address.
+We notice that the characters 45-48 we input are reflected into the return address gathered from the "<get_return_address>" method. I also notice that, if I don't do anything malicious, the return address is just the address given in the disassembled binary. So lets try to inject the address of "\<win>" (0x080491f6) into the return address.
 
 Since the application is little endian, we use this payload:
 
