@@ -63,6 +63,8 @@ int main(int argc, char *argv[]) {
 }
 ```
 
+- But the code uses `getuid()` instead of `geteuid()`, so the setuid bit does not make it work for root files.
+
 >I did not really know how to exploit this... So I asked ChatGPT, it came up with a symlink attack using race conditions. A TOCTOU (Time-of-check Time-of-use) Attack, then I read the tag of the challenge that also said TOCTOU, and yeah, I should have seen that earlier...
 
 The idea is that there is a time between the permissions check and the file reader. So we can create a symlink that is constantly switched between the `flag.txt` and some file I own. So create such a file with `echo "hi" > my.txt`, and then create a script.sh file that continuously switches the link:
